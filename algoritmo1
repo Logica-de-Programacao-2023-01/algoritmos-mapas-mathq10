@@ -1,0 +1,14 @@
+package main
+
+import "strings"
+
+func contarPalavras(str string) map[string]int {
+	contador := make(map[string]int)
+
+	palavras := strings.Fields(str)
+
+	for _, palavra := range palavras {
+		contador[palavra]++
+	}
+	return contador
+}
