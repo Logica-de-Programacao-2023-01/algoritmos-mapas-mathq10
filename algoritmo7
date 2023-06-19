@@ -1,0 +1,17 @@
+package main
+
+import "strings"
+
+func contaLetrinhas(str string) map[string]map[string]int {
+	palavras := strings.Fields(str)
+	resultado := make(map[string]map[string]int)
+
+	for _, ler := range palavras {
+		contadorLetras := make(map[string]int)
+		for _, letra := range ler {
+			contadorLetras[string(letra)]++
+		}
+		resultado[ler] = contadorLetras
+	}
+	return resultado
+}
