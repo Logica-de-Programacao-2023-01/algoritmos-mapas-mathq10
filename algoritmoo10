@@ -1,0 +1,15 @@
+package main
+
+func countPairs(nums []int) map[[2]int]int {
+	pairFreq := make(map[[2]int]int)
+
+	// Contagem dos pares de números
+	for i := 0; i < len(nums); i++ {
+		for j := i + 1; j < len(nums); j++ {
+			pair := [2]int{nums[i], nums[j]}
+			pairFreq[pair]++
+		}
+	}
+
+	return pairFreq
+}
