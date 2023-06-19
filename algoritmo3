@@ -1,0 +1,11 @@
+package main
+
+import "fmt"
+
+func soma(mapa map[int]int) int {
+	var soma int
+	for _, valor := range mapa {
+		soma += valor
+	}
+	return soma
+}
