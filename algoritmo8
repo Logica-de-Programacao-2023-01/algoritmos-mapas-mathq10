@@ -1,0 +1,20 @@
+func equalizeExpenses(expenses map[string]float64) map[string]float64 {
+	totalExpenses := 0.0
+	numPeople := len(expenses)
+
+	// Calcula o total de despesas
+	for _, expense := range expenses {
+		totalExpenses += expense
+	}
+
+	// Calcula a média de despesas por pessoa
+	averageExpense := totalExpenses / float64(numPeople)
+
+	// Calcula o valor que cada pessoa deve receber ou pagar para igualar as despesas
+	equalizedExpenses := make(map[string]float64)
+	for person, expense := range expenses {
+		equalizedExpenses[person] = expense - averageExpense
+	}
+
+	return equalizedExpenses
+}
