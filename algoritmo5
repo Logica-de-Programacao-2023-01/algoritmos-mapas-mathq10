@@ -1,0 +1,9 @@
+package main
+
+func quantasLetras(str string) map[rune]int {
+	contadorCaracter := make(map[rune]int)
+	for _, lendo := range str {
+		contadorCaracter[lendo]++
+	}
+	return contadorCaracter
+}
