@@ -1,0 +1,12 @@
+package main
+
+func contadorPalavra(mapa []map[string]int) map[string]int {
+	resultado:= make(map[string]int)
+
+	for _, contarPalavra:= range mapa {
+		for key,value:= range contarPalavra {
+			resultado[key] += value
+		}
+	}
+	return resultado
+}
