@@ -1,0 +1,25 @@
+package main
+
+import (
+	"sort"
+	"strings"
+)
+
+func anagramado(slice []string) map[string][]string {
+	anagrmas := make(map[string][]string)
+	for _, palavra := range slice {
+		palavrasOrdenadas := ordemPalavra(palavra)
+		if _, ok := anagrmas[palavrasOrdenadas]; ok {
+			anagrmas[palavrasOrdenadas] = append(anagrmas[palavrasOrdenadas], palavra)
+		} else {
+			anagrmas[palavrasOrdenadas] = []string{palavra}
+		}
+	}
+	return anagrmas
+}
+
+func ordemPalavra(s string) string {
+	caracteres := strings.Split(s, " ")
+	sort.Strings(caracteres)
+	return strings.Join(caracteres, " ")
+}
